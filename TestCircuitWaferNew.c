@@ -2969,5 +2969,4 @@ static void SetPowerOperationAccordance(int val)
 {
 	SetCtrlVal(panelHandle,PANEL_2_BIN_POWER_UI,val);
 	SetCtrlVal(panelHandleSelfTest,PANEL_4_BIN_OPERATION_POWER_C,val);
-	SetCtrlVal(panelHandleMain,PANEL_BIN_POWER_OPRATION,val);	
-}
+	SetCtrlVal(panelHandleMain,PANEL_BIN_POWER_OPRATION,val);	}

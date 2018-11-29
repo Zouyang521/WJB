@@ -1,0 +1,52 @@
+CCFLAGS = -g ;
+HDRS = 	"c:\\program files (x86)\\national instruments\\cvi2013\\toolslib\\activex\\word"
+	"c:\\program files (x86)\\national instruments\\cvi2013\\toolslib\\activex\\excel"
+	"c:\\program files (x86)\\national instruments\\cvi2013\\toolslib\\custctrl"
+	"c:\\program files (x86)\\national instruments\\cvi2013\\toolslib\\custctrl\\custsupp"
+	"c:\\program files (x86)\\national instruments\\cvi2013\\toolslib\\cvirtsup"
+	"c:\\program files (x86)\\national instruments\\cvi2013\\toolslib\\datasock"
+	"c:\\program files (x86)\\national instruments\\cvi2013\\toolslib\\daqUtil"
+	"c:\\program files (x86)\\national instruments\\cvi2013\\toolslib\\printing"
+	"c:\\program files (x86)\\national instruments\\cvi2013\\toolslib\\toolbox"
+	"c:\\program files (x86)\\national instruments\\cvi2013\\toolslib\\reportgen"
+	"c:\\program files (x86)\\national instruments\\cvi2013\\toolslib\\localui"
+	"c:\\program files (x86)\\national instruments\\cvi2013\\instr"
+	"C:\\Program Files (x86)\\National Instruments\\Shared\\CVI\\toolslib\\custctrl"
+	"C:\\Program Files (x86)\\National Instruments\\Shared\\CVI\\toolslib\\custctrl\\custsupp"
+	"C:\\Program Files (x86)\\National Instruments\\Shared\\CVI\\instr"
+	"C:\\ProgramData\\National Instruments\\CVI2013\\instr"
+	"c:\\program files (x86)\\national instruments\\cvi2013\\include"
+	"C:\\Program Files (x86)\\National Instruments\\Shared\\CVI\\include"
+	"C:\\ProgramData\\National Instruments\\CVI2013\\include"
+	"C:\\ProgramData\\National Instruments\\CVI\\include"
+	"c:\\program files (x86)\\national instruments\\cvi2013\\include\\ansi"
+	"c:\\program files (x86)\\national instruments\\cvi2013\\include\\clang\\2.9"
+	"C:\\Program Files (x86)\\IVI Foundation\\IVI\\Include"
+	"C:\\Program Files (x86)\\IVI Foundation\\VISA\\winnt\\include"
+	"c:\\program files (x86)\\national instruments\\cvi2013\\sdk\\include"
+	"c:\\Users\\zy\\Desktop\\在研产品\\FK90微机板测试设备2018-11-5版"
+	"c:\\Program Files (x86)\\National Instruments\\CVI2013\\bin"
+	"c:\\ProgramData\\National Instruments\\CVI2013\\bin"
+	"c:\\Program Files (x86)\\National Instruments\\Shared\\CVI\\Bin"
+	;
+include Jamfile_instr ;
+LOCATE on "cmdtable.h" = "c:\\Users\\zy\\Desktop\\在研产品\\FK90微机板测试设备2018-11-5版" ;
+LOCATE on "functions.c" = "c:\\Users\\zy\\Desktop\\在研产品\\FK90微机板测试设备2018-11-5版" ;
+LOCATE on "functions.h" = "c:\\Users\\zy\\Desktop\\在研产品\\FK90微机板测试设备2018-11-5版" ;
+LOCATE on "sys.h" = "c:\\Users\\zy\\Desktop\\在研产品\\FK90微机板测试设备2018-11-5版" ;
+LOCATE on "TestCircuitWaferNew.c" = "c:\\Users\\zy\\Desktop\\在研产品\\FK90微机板测试设备2018-11-5版" ;
+Object "c:\\Users\\zy\\Desktop\\在研产品\\FK90微机板测试设备2018-11-5版\\cvibuild.TestCircuitWaferNew\\Debug\\functions.obj" : "c:\\Users\\zy\\Desktop\\在研产品\\FK90微机板测试设备2018-11-5版\\functions.c" ;
+FILENUM on "c:\\Users\\zy\\Desktop\\在研产品\\FK90微机板测试设备2018-11-5版\\cvibuild.TestCircuitWaferNew\\Debug\\functions.obj" = 1 ;
+DEFPROTS on "c:\\Users\\zy\\Desktop\\在研产品\\FK90微机板测试设备2018-11-5版\\cvibuild.TestCircuitWaferNew\\Debug\\functions.obj" = "c:\\Users\\zy\\Desktop\\在研产品\\FK90微机板测试设备2018-11-5版\\cvibuild.TestCircuitWaferNew\\Debug\\functions.obj.cvidefprots" ;
+OUTFILE on "c:\\Users\\zy\\Desktop\\在研产品\\FK90微机板测试设备2018-11-5版\\cvibuild.TestCircuitWaferNew\\Debug\\functions.obj" = "c:\\Users\\zy\\Desktop\\在研产品\\FK90微机板测试设备2018-11-5版\\cvibuild.TestCircuitWaferNew\\Debug\\functions.obj.out" ;
+PrjObjects += "c:\\Users\\zy\\Desktop\\在研产品\\FK90微机板测试设备2018-11-5版\\cvibuild.TestCircuitWaferNew\\Debug\\functions.obj" ;
+Object "c:\\Users\\zy\\Desktop\\在研产品\\FK90微机板测试设备2018-11-5版\\cvibuild.TestCircuitWaferNew\\Debug\\TestCircuitWaferNew.obj" : "c:\\Users\\zy\\Desktop\\在研产品\\FK90微机板测试设备2018-11-5版\\TestCircuitWaferNew.c" ;
+FILENUM on "c:\\Users\\zy\\Desktop\\在研产品\\FK90微机板测试设备2018-11-5版\\cvibuild.TestCircuitWaferNew\\Debug\\TestCircuitWaferNew.obj" = 2 ;
+DEFPROTS on "c:\\Users\\zy\\Desktop\\在研产品\\FK90微机板测试设备2018-11-5版\\cvibuild.TestCircuitWaferNew\\Debug\\TestCircuitWaferNew.obj" = "c:\\Users\\zy\\Desktop\\在研产品\\FK90微机板测试设备2018-11-5版\\cvibuild.TestCircuitWaferNew\\Debug\\TestCircuitWaferNew.obj.cvidefprots" ;
+OUTFILE on "c:\\Users\\zy\\Desktop\\在研产品\\FK90微机板测试设备2018-11-5版\\cvibuild.TestCircuitWaferNew\\Debug\\TestCircuitWaferNew.obj" = "c:\\Users\\zy\\Desktop\\在研产品\\FK90微机板测试设备2018-11-5版\\cvibuild.TestCircuitWaferNew\\Debug\\TestCircuitWaferNew.obj.out" ;
+PrjObjects += "c:\\Users\\zy\\Desktop\\在研产品\\FK90微机板测试设备2018-11-5版\\cvibuild.TestCircuitWaferNew\\Debug\\TestCircuitWaferNew.obj" ;
+Object "c:\\Users\\zy\\Desktop\\在研产品\\FK90微机板测试设备2018-11-5版\\cvibuild.TestCircuitWaferNew\\Debug\\resources.res" : "c:\\Users\\zy\\Desktop\\在研产品\\FK90微机板测试设备2018-11-5版\\cvibuild.TestCircuitWaferNew\\Debug\\resources.in.rc" ;
+MainFromObjects "c:\\Users\\zy\\Desktop\\在研产品\\FK90微机板测试设备2018-11-5版\\cvibuild.TestCircuitWaferNew\\Debug\\TestCircuitWaferNew.exe" : $(PrjObjects) $(InstrObjects) ;
+Depends "c:\\Users\\zy\\Desktop\\在研产品\\FK90微机板测试设备2018-11-5版\\cvibuild.TestCircuitWaferNew\\Debug\\TestCircuitWaferNew.exe" : "c:\\Users\\zy\\Desktop\\在研产品\\FK90微机板测试设备2018-11-5版\\cvibuild.TestCircuitWaferNew\\Debug\\link_options.txt" ;
+Depends "c:\\Users\\zy\\Desktop\\在研产品\\FK90微机板测试设备2018-11-5版\\cvibuild.TestCircuitWaferNew\\Debug\\TestCircuitWaferNew.exe" : "c:\\Users\\zy\\Desktop\\在研产品\\FK90微机板测试设备2018-11-5版\\cvibuild.TestCircuitWaferNew\\Debug\\resources.res" ;
+Depends all : "c:\\Users\\zy\\Desktop\\在研产品\\FK90微机板测试设备2018-11-5版\\cvibuild.TestCircuitWaferNew\\Debug\\TestCircuitWaferNew.exe" ;

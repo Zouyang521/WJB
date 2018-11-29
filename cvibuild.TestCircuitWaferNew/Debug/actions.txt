@@ -1,0 +1,6 @@
+
+CallCC.bat 1 "c:\Users\user\Desktop\FK90微机板测试设备2018-8-9\functions.c" "c:\Users\user\Desktop\FK90微机板测试设备2018-8-9\cvibuild.TestCircuitWaferNew\Debug\functions.obj" "c:\Users\user\Desktop\FK90微机板测试设备2018-8-9\cvibuild.TestCircuitWaferNew\Debug\functions.obj.cvidefprots" "c:\Users\user\Desktop\FK90微机板测试设备2018-8-9\cvibuild.TestCircuitWaferNew\Debug\functions.obj.out" -g
+
+CallCC.bat 2 "c:\Users\user\Desktop\FK90微机板测试设备2018-8-9\TestCircuitWaferNew.c" "c:\Users\user\Desktop\FK90微机板测试设备2018-8-9\cvibuild.TestCircuitWaferNew\Debug\TestCircuitWaferNew.obj" "c:\Users\user\Desktop\FK90微机板测试设备2018-8-9\cvibuild.TestCircuitWaferNew\Debug\TestCircuitWaferNew.obj.cvidefprots" "c:\Users\user\Desktop\FK90微机板测试设备2018-8-9\cvibuild.TestCircuitWaferNew\Debug\TestCircuitWaferNew.obj.out" -g
+
+CallLink.bat -cmd:link_options.txt

@@ -1,0 +1,12 @@
+[mycheckbuff]
+Class="Function"
+Prototype="unsigned char *mycheckbuff(unsigned char *buff, unsigned char buffweidth);"
+
+[GetCRC16]
+Class="Function"
+Prototype="unsigned short GetCRC16(unsigned char *addr, int length);"
+
+[HexToInt]
+Class="Function"
+Prototype="short HexToInt(unsigned char *Hex, int i);"
+

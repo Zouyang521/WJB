@@ -133,7 +133,7 @@ static u8 errorDICount=0;  //DI 测试出现的错误次数
 static u8 errorDOCount=0;  //DO 测试出现的错误次数
 static u8 errorADCount=0;  //AD 测试出现的错误次数
 static u8 errorLoadCount=0;  //通道 测试出现的错误次数
-static u8 errorBeepCount = 0;//
+static u8 errorBeepCount = 0;//蜂鸣器 测试出现的错误次数
 //==============================================================================
 // Static functions
 

@@ -157,6 +157,7 @@ int AutoSendValibrationFlag = 0;
 static int processIndex = 0;	 //进度条实时值
 int printResult[27]={0};//存储打印结果 0:未测试，不填  1:正确 2：错误
 int printResultIndex = 0;
+int indexBeep = 0;//蜂鸣器执行到哪一步 0:默认 1:断续 2:连续 3:停止
 const char *OperatrionMessage =
 	"注意事项:\n"
 	"每次点击一键测试,\n"
@@ -859,16 +860,20 @@ int CVICALLBACK CMD_BEEP_callback (int panel, int control, int event,
 		case EVENT_COMMIT:
 	
 				if(comSelect > 0)
+				{
+				    indexBeep = 1;
 					ComWrt(comSelect,BeepIntermittent,10);
-				
+				}
 				val = ConfirmPopup("蜂鸣器结果","是否听到断续音响提示音");
 				if(val == 1)//听到断续
 				{
+				    indexBeep = 2;
 					ComWrt(comSelect,BeepContinue,10);//发送连续的
 					Sleep(5);
 					val = ConfirmPopup("蜂鸣器结果","是否听到连续音响提示音");
 					if(val == 1)	 //听到连续
 					{
+					    indexBeep = 3;
 						ComWrt(comSelect,BeepClose,10);       
 						SetCtrlAttribute(panelHandle,PANEL_2_LED_7,ATTR_ON_COLOR,VAL_GREEN);		
 						SetCtrlVal(panelHandle,PANEL_2_LED_7,1);
@@ -876,7 +881,8 @@ int CVICALLBACK CMD_BEEP_callback (int panel, int control, int event,
 					}
 					else		 //没有听到连续的
 					{
-						 ComWrt(comSelect,BeepClose,10);
+     					 indexBeep = 3;
+  						 ComWrt(comSelect,BeepClose,10);
 						 SetCtrlAttribute(panelHandle,PANEL_2_LED_7,ATTR_OFF_COLOR,VAL_RED);
 						 printResult[24] = 2; 
 					}
@@ -884,9 +890,10 @@ int CVICALLBACK CMD_BEEP_callback (int panel, int control, int event,
 				}
 				else   //没有听到断续的 
 				{
+				    indexBeep = 3;
 					ComWrt(comSelect,BeepClose,10);
 					SetCtrlAttribute(panelHandle,PANEL_2_LED_7,ATTR_OFF_COLOR,VAL_RED);
-					printResult[24] = 2; 
+					printResult[24] = 2;
 				}
 				if(sendFlag == 1)
 				{
@@ -1527,7 +1534,7 @@ u16 MessgaeType(u8 *p)
 			analysisSelfTestType(p+3);
 			break;
 		case CMD_Micro_BeepRec:
-		//	analysisSelfTestType(p+3);
+			analysisSelfTestType(p+3);
 			break;
 		case CMD_Micro_RS232_REC://测试板RS232端口接收数据返回
 			 analysisRS232Test(p+3);
@@ -2565,8 +2572,8 @@ int analysisSelfTestType(u8 *p)
 					printResult[26] = 2;
 				}
 			break;
-	/*	case CMD_Micro_BeepRec://微机板蜂鸣器
-			for (int i = 0;i < 4 ;i++)
+		case CMD_Micro_BeepRec://微机板蜂鸣器
+			/*for (int i = 0;i < 4 ;i++)
 				 if(*(p+1+i) == MiroADBuzzerRev[i])
 					//SetCtrlVal(panelHandleSelfTest,PANEL_2_LED_9,1);
 					MessagePopup("","蜂鸣器控制成功");
@@ -2574,9 +2581,24 @@ int analysisSelfTestType(u8 *p)
 				{
 					MessagePopup("","蜂鸣器控制失败");
 				//	SetCtrlAttribute(panelHandleSelfTest,PANEL_2_LED_9,ATTR_OFF_COLOR,VAL_RED);
-				//	SetCtrlVal(panelHandleSelfTest,PANEL_2_LED_9,0); 
-				}
-			break;  */
+				//	SetCtrlVal(panelHandleSelfTest,PANEL_2_LED_9,0);
+				}*/
+				if(errorBeepCount < 5)
+                   {
+                        if(*(p+1+0)==00xff && *(p+1+1)==00xff && *(p+1+2)==00xff&& *(p+1+3)==00xff)
+                        {
+                            errorBeepCount ++;
+                            if(indexBeep == 1)
+                                ComWrt(comSelect,BeepIntermittent,10);
+                            else if(indexBeep == 2)
+                                ComWrt(comSelect,BeepContinue,10)
+                            else
+                                ComWrt(comSelect,BeepClose,10);
+                        }
+                        else
+                            errorBeepCount = 0;
+                    }
+			break;
 	}
 	return 0;
 }
